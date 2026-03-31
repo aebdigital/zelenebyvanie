@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #184c37;
+  --forest-deep: #0d2c22;
+  --forest-soft: #255c45;
+  --sage: #d9e4d4;
+  --sage-deep: #a6b99d;
+  --sand: #f6f1e8;
+  --cream: #fbf8f2;
+  --ink: #1d211e;
+  --muted: #5b655d;
+  --gold: #b88b48;
+  --line: rgba(24, 76, 55, 0.14);
+  --header-overlap: clamp(6.75rem, 9vw, 7.35rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-overlap) + 1rem);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at top right, rgba(184, 139, 72, 0.14), transparent 24rem),
+    radial-gradient(circle at 0% 20%, rgba(37, 92, 69, 0.14), transparent 20rem),
+    linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%);
+  color: var(--ink);
+  font-family: "Montserrat", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.footer-scene {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--forest-deep);
+}
+
+.footer-scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(13, 44, 34, 0) 0%, rgba(13, 44, 34, 0.28) 16%, rgba(13, 44, 34, 0.74) 44%, rgba(13, 44, 34, 0.96) 74%, rgba(13, 44, 34, 1) 100%),
+    linear-gradient(180deg, rgba(24, 76, 55, 0.18) 0%, rgba(13, 44, 34, 0.88) 100%),
+    url("/site/home/about-family.jpg");
+  background-position: center 32%;
+  background-size: cover;
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.footer-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(251, 248, 242, 0.92) 0%, rgba(251, 248, 242, 0.18) 14%, rgba(251, 248, 242, 0) 26%),
+    radial-gradient(circle at top center, rgba(37, 92, 69, 0.22), transparent 44%);
+  pointer-events: none;
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+::selection {
+  background: rgba(24, 76, 55, 0.18);
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-[95vw] max-w-none;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em];
+    border-color: var(--line);
+    color: var(--forest);
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .panel {
+    @apply rounded-[32px] border bg-white/70 shadow-[0_20px_70px_rgba(13,44,34,0.08)] backdrop-blur-sm;
+    border-color: var(--line);
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_36px_rgba(13,44,34,0.18)];
+    background-color: var(--forest);
+  }
+
+  .button-primary:hover {
+    background-color: var(--forest-deep);
+    transform: translateY(-1px);
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-semibold;
+    border-color: var(--line);
+    color: var(--forest);
+    background-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .button-secondary:hover {
+    border-color: rgba(24, 76, 55, 0.3);
+    background-color: white;
+    transform: translateY(-1px);
+  }
+
+  .soft-grid {
+    background-image:
+      linear-gradient(rgba(24, 76, 55, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24, 76, 55, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0);
+  transition:
+    opacity 760ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.lightbox-media {
+  animation-duration: 360ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.lightbox-media-next {
+  animation-name: lightbox-media-next;
+}
+
+.lightbox-media-prev {
+  animation-name: lightbox-media-prev;
+}
+
+@keyframes lightbox-media-next {
+  from {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes lightbox-media-prev {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .lightbox-media {
+    animation: none;
+  }
+}
