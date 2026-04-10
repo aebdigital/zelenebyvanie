@@ -131,7 +131,7 @@ export default function PrivacyPage() {
           {[
             "Prístup k osobným údajom, ktoré spracúvame",
             "Oprava nepresných alebo neúplných údajov",
-            "Vymazanie („právo zabudnutia"), ak na spracovanie už nie je právny základ",
+            'Vymazanie („právo zabudnutia"), ak na spracovanie už nie je právny základ',
             "Obmedzenie spracovania",
             "Prenosnosť údajov",
             "Odvolanie súhlasu – stane sa účinným dňom odvolania",
