@@ -38,10 +38,20 @@ export default function HomePage() {
                   key={service.title}
                   data-reveal
                   style={{ "--reveal-delay": `${120 + index * 70}ms` }}
-                  className="panel p-6"
+                  className="panel relative min-h-[240px] overflow-hidden flex flex-col justify-end p-6"
                 >
-                  <h3 className="text-3xl">{service.title}</h3>
-                  <p className="mt-4 leading-7 text-[color:var(--muted)]">{service.description}</p>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 95vw, (max-width: 1280px) 46vw, 30vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d2c22]/95 via-[#0d2c22]/60 to-[#184c37]/20" />
+                  <div className="relative z-10">
+                    <h3 className="text-3xl font-bold text-white">{service.title}</h3>
+                    <p className="mt-3 leading-7 text-white/80">{service.description}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -160,8 +170,8 @@ export default function HomePage() {
                 </p>
                 <p>
                   Pôsobíme v regiónoch Žilinského a Trenčianskeho samosprávneho kraja a to hlavne v
-                  Považskej Bystrici, Púchove, Bytči a Žiline a okolitých dedín. Nebránime sa však
-                  ani vycestovaniu za prácou do vzdialenejších kútov SR.
+                  Považskej Bystrici, Púchove, Bytči a Žiline a okolitých obciach. V prípade potreby
+                  pôsobíme na celom území SR a ČR.
                 </p>
               </div>
             </div>

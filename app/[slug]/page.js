@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { RentalCard } from "../../components/rental-card";
+import { RentalGallery } from "../../components/rental-gallery";
 import { createMetadata, getRentalBySlug, rentals, siteConfig } from "../../lib/site-data";
 
 export function generateStaticParams() {
@@ -75,23 +76,8 @@ export default async function RentalDetailPage({ params }) {
           </div>
         </div>
 
-        <div data-reveal style={{ "--reveal-delay": "160ms" }} className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {rental.gallery.map((image, index) => (
-            <div
-              key={image}
-              data-reveal
-              style={{ "--reveal-delay": `${220 + index * 40}ms` }}
-              className="panel relative aspect-square overflow-hidden"
-            >
-              <Image
-                src={image}
-                alt={`${rental.title} ${index + 1}`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 640px) 95vw, (max-width: 1280px) 28vw, 18vw"
-              />
-            </div>
-          ))}
+        <div>
+          <RentalGallery gallery={rental.gallery} title={rental.title} />
         </div>
       </section>
 

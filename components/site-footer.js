@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CookiesFooterLink } from "./cookies-footer-link";
 import { navItems, siteConfig } from "../lib/site-data";
 
 export function SiteFooter() {
@@ -45,13 +46,18 @@ export function SiteFooter() {
       <div className="relative z-10 border-t border-white/10">
         <div className="shell flex flex-col gap-3 py-5 text-xs text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright © 2026 {siteConfig.legalName}. Všetky práva vyhradené.</p>
-          <p>
-            Tvorba stránky –
-            {" "}
-            <a href="https://aebdigital.sk" className="hover:text-white">
-              AEB Digital
-            </a>
-          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/ochrana-osobnych-udajov" className="hover:text-white">
+              Ochrana osobných údajov
+            </Link>
+            <CookiesFooterLink />
+            <p>
+              Tvorba stránky –{" "}
+              <a href="https://aebdigital.sk" className="hover:text-white">
+                AEB Digital
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

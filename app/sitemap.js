@@ -6,7 +6,8 @@ const staticRoutes = [
   "/zelena-energia",
   "/poziciavame",
   "/financovanie",
-  "/kontakt"
+  "/kontakt",
+  "/ochrana-osobnych-udajov"
 ];
 
 export default function sitemap() {

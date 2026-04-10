@@ -2,6 +2,7 @@ import "@fontsource/montserrat/500.css";
 import "@fontsource/montserrat/600.css";
 import "@fontsource/montserrat/700.css";
 
+import { CookiesBanner } from "../components/cookies-banner";
 import { RevealObserver } from "../components/reveal-observer";
 import { SeoSchema } from "../components/seo-schema";
 import { SiteFooter } from "../components/site-footer";
@@ -49,6 +50,10 @@ export const metadata = {
     description: siteConfig.description,
     images: [siteConfig.defaultOgImage]
   },
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png"
+  },
   robots: {
     index: true,
     follow: true,
@@ -89,6 +94,7 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <CookiesBanner />
       </body>
     </html>
   );
