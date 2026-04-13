@@ -120,7 +120,7 @@ export function HomeHero() {
                 <div className="rounded-[24px] border border-white/12 bg-white/8 p-4">
                   <p className="text-xs uppercase tracking-[0.18em] text-white/58">Oblasť pôsobenia</p>
                   <p className="mt-2 text-sm leading-7 text-white/78">
-                    Považská Bystrica, Púchov, Bytča, Žilina a okolie
+                    Považská Bystrica, Púchov, Bytča, Žilina a okolie, v prípade potreby celá SR a ČR
                   </p>
                 </div>
                 <div className="rounded-[24px] border border-white/12 bg-white/8 p-4">

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { motion } from "framer-motion";
+
 import { navItems, siteConfig } from "../lib/site-data";
 
 function isActive(pathname, href) {
@@ -33,7 +35,23 @@ export function SiteHeader() {
     >
       <div className="border-b border-[color:var(--line)] bg-[color:var(--forest)]">
         <div className="shell flex flex-wrap items-center justify-between gap-3 py-3 text-sm text-white">
-          <p className="font-bold">Dajte zelenú vášmu bývaniu</p>
+          <div className="relative inline-flex flex-col">
+            <motion.p
+              initial={{ clipPath: "inset(0 100% 0 0)" }}
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{ delay: 1.5, duration: 0.8, ease: "easeInOut" }}
+              className="text-base font-bold uppercase tracking-wider text-white sm:text-lg"
+            >
+              Dajte zelenú vášmu bývaniu
+            </motion.p>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 2.3, duration: 0.6, ease: "easeOut" }}
+              className="mt-1 h-0.5 w-full bg-white"
+              style={{ originX: 0 }}
+            />
+          </div>
           <div className="flex flex-wrap items-center gap-5">
             <a href={`mailto:${siteConfig.email}`} className="font-semibold hover:text-white/80">
               {siteConfig.email}

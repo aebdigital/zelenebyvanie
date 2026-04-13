@@ -114,29 +114,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div data-reveal style={{ "--reveal-delay": "120ms" }} className="panel relative aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/site/energy/solar.jpg"
-                  alt="Fotovoltické panely"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 95vw, 46vw"
-                />
-              </div>
-              <div
-                data-reveal
-                style={{ "--reveal-delay": "240ms" }}
-                className="panel relative aspect-[4/5] overflow-hidden sm:translate-y-10"
-              >
-                <Image
-                  src="/site/energy/smart-home.webp"
-                  alt="Inteligentná domácnosť"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 95vw, 46vw"
-                />
-              </div>
+            <div data-reveal style={{ "--reveal-delay": "120ms" }} className="panel relative min-h-[420px] overflow-hidden">
+              <Image
+                src="/site/energy/solar.jpg"
+                alt="Fotovoltické panely"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 95vw, 46vw"
+              />
             </div>
           </div>
         </section>
