@@ -108,7 +108,7 @@ export function HomeHero() {
             <div
               data-reveal
               style={{ "--reveal-delay": "560ms" }}
-              className="panel max-w-xl justify-self-end bg-[rgba(255,255,255,0.14)] p-6 text-white shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-8"
+              className="panel hidden lg:block max-w-xl justify-self-end bg-[rgba(255,255,255,0.14)] p-6 text-white shadow-[0_24px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl sm:p-8"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/60">
                 Kompletné riešenie bývania
