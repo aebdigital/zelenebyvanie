@@ -20,7 +20,7 @@ export function RealizationsGallery({ galleries }) {
 
   const openLightbox = (photoSrc) => {
     const nextIndex = lightboxItems.findIndex(
-      (item) => (item.remoteSrc || item.src) === photoSrc
+      (item) => (item.src || item.remoteSrc) === photoSrc
     );
 
     if (nextIndex >= 0) {
@@ -53,16 +53,16 @@ export function RealizationsGallery({ galleries }) {
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {gallery.photos.map((photo, photoIndex) => (
               <button
-                key={`${gallery.slug}-${photoIndex}-${photo.remoteSrc || photo.src}`}
+                key={`${gallery.slug}-${photoIndex}-${photo.src || photo.remoteSrc}`}
                 type="button"
-                onClick={() => openLightbox(photo.remoteSrc || photo.src)}
+                onClick={() => openLightbox(photo.src || photo.remoteSrc)}
                 data-reveal
                 style={{ "--reveal-delay": `${120 + photoIndex * 45}ms` }}
                 className="group relative block cursor-pointer overflow-hidden text-left"
               >
                 <div className="relative aspect-[4/3] min-h-[220px]">
                   <img
-                    src={photo.remoteSrc || photo.src}
+                    src={photo.src || photo.remoteSrc}
                     alt={photo.caption || gallery.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"

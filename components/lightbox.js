@@ -115,7 +115,7 @@ export function Lightbox({ items, currentIndex, onClose, onNext, onPrevious }) {
           }`}
         >
           <img
-            src={current.remoteSrc || current.src}
+            src={current.src || current.remoteSrc}
             alt={current.caption || current.galleryTitle || ""}
             className="max-h-[78vh] w-full object-contain"
           />
