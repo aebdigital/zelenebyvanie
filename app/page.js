@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <div className="relative z-20 space-y-20 pt-10 pb-8">
         <section id="cinnost" className="shell">
-          <div className="panel soft-grid px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div className="panel px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
             <SectionHeading
               delay={0}
               eyebrow="Naše služby"
@@ -85,7 +85,7 @@ export default function HomePage() {
 
         <section className="shell">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-            <div data-reveal style={{ "--reveal-delay": "0ms" }} className="panel soft-grid overflow-hidden p-8 sm:p-10">
+            <div data-reveal style={{ "--reveal-delay": "0ms" }} className="panel overflow-hidden p-8 sm:p-10">
               <SectionHeading
                 delay={0}
                 eyebrow="Zelená energia"
@@ -197,7 +197,7 @@ export default function HomePage() {
         </section>
 
         <section className="shell">
-          <div data-reveal style={{ "--reveal-delay": "0ms" }} className="panel soft-grid overflow-hidden px-6 py-10 sm:px-10 sm:py-12">
+          <div data-reveal style={{ "--reveal-delay": "0ms" }} className="panel overflow-hidden px-6 py-10 sm:px-10 sm:py-12">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-3xl space-y-4">
                 <p className="eyebrow">Dajte zelenú vášmu bývaniu</p>
