@@ -151,7 +151,7 @@ export function SiteHeader() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.28, ease: [0.2, 0.8, 0.2, 1] }}
-            className="overflow-hidden border-t border-[color:var(--line)] bg-[color:var(--cream)] lg:hidden"
+            className="absolute left-0 right-0 top-full overflow-hidden border-b border-[color:var(--line)] bg-[color:var(--cream)] shadow-[0_16px_48px_rgba(13,44,34,0.13)] lg:hidden"
           >
             <div className="shell flex flex-col gap-2 py-5">
               {navItems.map((item) => (
@@ -168,14 +168,6 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
-
-              <Link
-                href="/kontakt"
-                onClick={() => setOpen(false)}
-                className="button-primary mt-2 w-full"
-              >
-                Napísať správu
-              </Link>
 
               {/* Contact info in mobile menu */}
               <div className="mt-3 border-t border-[color:var(--line)] pt-4 flex flex-col gap-3">
